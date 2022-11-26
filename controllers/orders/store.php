@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $data['user_id']           = $_SESSION['user']['id'];
     $data['total']             = 0;
 
-    $products  = $_POST['products'];
+    $products  = $_POST['products'] ?? [];
 
     $errors = validate(['products','client_id'] , $_POST);
 

@@ -34,7 +34,8 @@ function validate($fields , $data): array
 {
     $errors= [];
     foreach ($fields as $item) {
-        $temp = $data[$item] == null or $data[$item] == []? 'field ' . $item . ' is required' : null;
+        $temp = (!isset($data[$item]) or $data[$item] == null or $data[$item] == [] )? 'field ' . $item . ' is required' : null;
+
         if ($temp)
             $errors[] = $temp;
     }
