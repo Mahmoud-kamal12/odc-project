@@ -1,26 +1,47 @@
 <?php
 require_once 'core/config.php';
 require_once 'core/conn.php';
-require_once 'pages/inc/header.php';
-require_once 'pages/inc/nav.php';
+include 'pages/inc/header.php';
+
+$pagename = 'home';
 
 ?>
 
-<div class="container">
+<div class="wrapper">
+ 
+    <?php include 'pages/inc/nav.php';?>
 
-    <div class="row mt-5">
-        <div class="col text-center">
-            <h1>Home Page</h1>
-        </div>
+    <?php include 'pages/inc/aside.php';?>
+
+<div class="content-wrapper">
+
+  <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="<?= URL ."index.php"?>">Home</a></li>
+              <li class="breadcrumb-item active">Home</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
 
-    <div class="row">
-        <div class="col text-left">
-            <h4>User Name : <?= $_SESSION['user']['name'] ?></h4>
-            <h4>User E-Mail : <?= $_SESSION['user']['email'] ?></h4>
-            <h4>User Type : <?= $_SESSION['user']['email'] == 1 ? "admin" : "user";  ?></h4>
-        </div>
-    </div>
+    <section class="content">
+      <div class="container-fluid">
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2022-2023 <a href="">Mahmoud Kamal</a></strong>
+  </footer>
 
 </div>
 

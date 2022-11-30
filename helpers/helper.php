@@ -1,6 +1,24 @@
 <?php
 
 
+function printLi($url , $name , $icon ,  $two = false){
+
+    $str = '';
+
+    if (checkAdmin() or $two) {
+        $link = URL . $url;
+        $str =     "<li class='nav-item'>
+        <a href='{$link}' class='nav-link '>
+          <i class='{$icon} mr-2'> </i>
+          <p>{$name}</p>
+        </a>
+      </li>";
+    }
+    return $str;
+
+
+}
+
 
 function checkAdmin(){
     return $_SESSION['user']['type'] == 1;
@@ -23,7 +41,7 @@ function showErrors($errors){
     if ($errors) {
         $str = '<div class="row col-8 mx-auto">';
         foreach ($errors['error'] as $error) {
-            $str .= "<div class='alert alert-danger' role='alert'>{$error}</div>";
+            $str .= "<div class='alert alert-danger w-100' role='alert'>{$error}</div>";
         }
         $str .= '</div>';
     }
